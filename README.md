@@ -2,6 +2,22 @@
 	Si la page affichée ne contient pas d'icones ou d'images de fond, merci de faire F5 ! :)
 	Merci
 
+#### ATOM
+### Faire persister les icones en production
+	config/environments/production.rb
+	Ajouter ces 2 lignes:
+```
+config.serve_static_assets = true
+config.assets.compile = true
+```
+
+### Faire persister la background image en production
+	Dans le CSS (body)
+```
+background: asset-data-url('background.jpg')
+```
+
+
 # PROCESS UTILISATION DEVISE
 
 ## CREER UNE NOUVELLE APP RAILS
@@ -84,21 +100,4 @@ rails db:migrate
 ## Possibilité de modification des views pour les sessions / gestion users
 ```
 rails g devise:views
-```
-
-
-# Projet du jour
-#### ATOM
-### Faire persister les icones en production
-	config/environments/production.rb
-	Ajouter ces 2 lignes:
-```
-config.serve_static_assets = true
-config.assets.compile = true
-```
-
-### Faire persister la background image en production
-	Dans le CSS (body)
-```
-background: asset-data-url('background.jpg')
 ```
