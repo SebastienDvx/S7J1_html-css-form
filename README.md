@@ -1,24 +1,83 @@
-# README
+#PROCESS UTILISATION DEVISE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##CREER UNE NOUVELLE APP RAILS
+CONSOLE
+	```
+	rails new nomApp
+	```
 
-Things you may want to cover:
+###GemFile Heroku compatible + gem 'devise'
+ATOM (dans le Gemfile)
+	1) Récupérer un gemfile heroku compatible
+	2) Ajouter la gem devise
+	```ruby
+	gem 'devise'
+	```
 
-* Ruby version
+###Installation de l'environnement
+CONSOLE
+	```
+	bundle install --without production
+	```
 
-* System dependencies
+###Initialisation du repo Github + création app heroku
+CONSOLE (Init repo github)
+		```
+		git init
+		git add .
+		git commit -am "Initial commit -> App Heroku compatible"
+		git push origin master
+		```
+CONSOLE (cration app Heroku)
+	```
+		heroku create
+		heroku rename nomApp --> optionnel
+	```
 
-* Configuration
+## Création d'un controller Home (de pages statiques)
+CONSOLE
+	```
+	rails g controller Home index
+	```
 
-* Database creation
+ATOM
+		Modifier le fichier Routes.rb (config/routes.rb)
+			```
+			root : 'Home#index'
+			```
+			(le get généré par la création du controller peut être supprimé)
 
-* Database initialization
+##Intégration de Devise
+CONSOLE
+	```
+		rails g devise:install
+  ```
+	Suivre les indications
+	1) Mailer : si voulu
+	2) La root : OK
+	3) Intégration du gestionnaire d'affichage des msg flash
+		app/views/layouts/application.html.erb
+			Copier les 2 lignes dans le body, avant le yield
+			```ruby
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+			```
 
-* How to run the test suite
+##Générer un model pour les Users
+CONSOLE
+	```
+	rails g devise User
+	```
+Ce qui se passe automatiquement:
+	--> Création de tous les fichiers nécessaires
+	--> Initialisation des Routes
 
-* Services (job queues, cache servers, search engines, etc.)
+CONSOLE
+	```
+	rails db:migrate
+	```
 
-* Deployment instructions
-
-* ...
+##Possibilité de modification des views pour les sessions / gestion users
+		```
+		rails g devise:views
+		```
