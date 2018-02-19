@@ -1,26 +1,47 @@
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="container">
+  <div>
+    <h1>Uniform</h1>
+    <p>L'inscription devient plus simple</p>
+    <hr width="15%">
+    <ul>
+      <li><i class="fas fa-file"></i> &nbsp;&nbsp; Un seul formulaire pour toutes les ecoles</li>
+      <li><i class="fas fa-graduation-cap"></i>&nbsp;&nbsp;Gérez facilement vos candidatures</li>
+      <li><i class="fas fa-cloud"></i>&nbsp;&nbsp;Stocker vos données scolaires</li>
+    </ul>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  <div>
+    <div class="formulaire">
+      <h6>Entrez vos identifiants</h6>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+        <div class="field" >
+          <i class="far fa-user"></i>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Adresse email" %>
+        </div>
+
+        <div class="field">
+          <i class="far fa-unlock-alt"></i>
+          <%= f.password_field :password, autocomplete: "off",placeholder:"Mot de passe (min #{@minimum_password_length} chars)" %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+
+        <div class="actions">
+          <%= f.submit "Connexion" %>
+        </div>
+      <% end %>
+      <!-- <%= link_to("Mot de passe oublié?", '#') %> -->
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="loginbtn">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

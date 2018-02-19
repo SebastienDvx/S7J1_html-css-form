@@ -1,3 +1,7 @@
+# Indication pour le proj du jour en production
+	Si la page affichée ne contient pas d'icones ou d'images de fond, merci de faire F5 ! :)
+	Merci 
+
 # PROCESS UTILISATION DEVISE
 
 ## CREER UNE NOUVELLE APP RAILS
