@@ -1,0 +1,65 @@
+body
+{
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  background-color: rgb(135, 149, 133);
+}
+
+.container
+{
+  display: flex;
+  background-color: white;
+  width: 40rem;
+  margin-top: 10rem;
+  height: 25rem;
+  border-radius: 5px;
+
+}
+
+.container > div
+{
+  // padding: 20px;
+}
+
+.formulaire
+{
+  padding: 20px;
+  margin-top: 25px;
+}
+
+.container > div:first-child
+{
+	background-color: rgb(48, 149, 207);
+  width: 55%;
+  color: white;
+  border-radius: 5px 0px 0px 5px;
+  padding-left: 20px;
+
+}
+
+.container form input[type=submit]
+{
+  background-color: rgb(48, 149, 207);
+  color: white;
+  height: 30px;
+  width: 173px;
+  margin-top: 10px;
+}
+
+.loginbtn
+{
+  
+  align-self: flex-end;
+  background-color: rgb(170, 170, 170);
+  height: 55px;
+  color: white;
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+
+.field
+{
+}

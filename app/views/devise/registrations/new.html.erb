@@ -1,0 +1,41 @@
+
+<div class="container">
+  <div>
+    <h1>Uniform</h1>
+    <p>L'inscription devient plus simple</p>
+    <hr width="15%">
+    <ul>
+      <li>Un seul formulaire pour toutes les écoles</li>
+      <li>Gérez facilement vos candidatures</li>
+      <li>Stocker vos données scolaires</li>
+    </ul>
+  </div>
+
+  <div>
+    <div class="formulaire">
+      <h6>Entrez vos identifiants</h6>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Adresse email" %>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "off",placeholder:"Mot de passe (min #{@minimum_password_length} chars)" %>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirmation" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Connexion" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="loginbtn">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
