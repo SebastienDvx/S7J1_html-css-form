@@ -1,50 +1,50 @@
 # Indication pour le proj du jour en production
 	Si la page affichée ne contient pas d'icones ou d'images de fond, merci de faire F5 ! :)
-	Merci 
+	Merci
 
 # PROCESS UTILISATION DEVISE
 
 ## CREER UNE NOUVELLE APP RAILS
-CONSOLE
+#### CONSOLE
 	```
 	rails new nomApp
 	```
 
 ### GemFile Heroku compatible + gem 'devise'
-ATOM (dans le Gemfile)
+#### ATOM (dans le Gemfile)
 	1) Récupérer un gemfile heroku compatible
 	2) Ajouter la gem devise
-	```ruby
+	```
 	gem 'devise'
 	```
 
 ### Installation de l'environnement
-CONSOLE
+#### CONSOLE
 	```
 	bundle install --without production
 	```
 
 ### Initialisation du repo Github + création app heroku
-CONSOLE (Init repo github)
+#### CONSOLE (Init repo github)
 		```
 		git init
 		git add .
 		git commit -am "Initial commit -> App Heroku compatible"
 		git push origin master
 		```
-CONSOLE (cration app Heroku)
+#### CONSOLE (cration app Heroku)
 	```
 		heroku create
 		heroku rename nomApp --> optionnel
 	```
 
 ## Création d'un controller Home (de pages statiques)
-CONSOLE
+#### CONSOLE
 	```
 	rails g controller Home index
 	```
 
-ATOM
+#### ATOM
 		Modifier le fichier Routes.rb (config/routes.rb)
 			```
 			root : 'Home#index'
@@ -52,7 +52,7 @@ ATOM
 			(le get généré par la création du controller peut être supprimé)
 
 ## Intégration de Devise
-CONSOLE
+#### CONSOLE
 	```
 		rails g devise:install
   ```
@@ -68,7 +68,7 @@ CONSOLE
 			```
 
 ## Générer un model pour les Users
-CONSOLE
+#### CONSOLE
 	```
 	rails g devise User
 	```
@@ -76,7 +76,7 @@ Ce qui se passe automatiquement:
 	--> Création de tous les fichiers nécessaires
 	--> Initialisation des Routes
 
-CONSOLE
+#### CONSOLE
 	```
 	rails db:migrate
 	```
@@ -88,7 +88,7 @@ CONSOLE
 
 
 # Projet du jour
-ATOM
+#### ATOM
 ### Faire persister les icones en production
 	config/environments/production.rb
 	Ajouter ces 2 lignes:
