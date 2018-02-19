@@ -3,7 +3,8 @@ body
   display: flex;
   justify-content: center;
   // align-items: center;
-  background: url("hills.jpg") fixed;
+  // background: url("hills.jpg") fixed;
+  background: asset-data-url('hills.jpg') fixed;
 }
 
 .container
