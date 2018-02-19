@@ -3,7 +3,7 @@ body
   display: flex;
   justify-content: center;
   // align-items: center;
-  background-color: rgb(135, 149, 133);
+  background: url("hills.jpg") fixed;
 }
 
 .container
@@ -14,6 +14,8 @@ body
   margin-top: 10rem;
   height: 25rem;
   border-radius: 5px;
+  border: 1px black solid;
+  text-align: auto;
 
 }
 
@@ -35,6 +37,7 @@ body
   color: white;
   border-radius: 5px 0px 0px 5px;
   padding-left: 20px;
+  // text-align: center;
 
 }
 
@@ -45,16 +48,17 @@ body
   height: 30px;
   width: 173px;
   margin-top: 10px;
+  margin-left: 20px;
+  border-radius: 5px;
 }
 
 .loginbtn
 {
-  
-  align-self: flex-end;
   background-color: rgb(170, 170, 170);
-  height: 55px;
+  height: 53px;
+  width: 270px;
   color: white;
-  margin-top: 10px;
+  margin-top: 85px;
   text-align: center;
   padding-top: 30px;
 }
@@ -62,4 +66,17 @@ body
 
 .field
 {
+  // width: 300px;
+}
+
+ul
+{
+  list-style-type:none;
+  // background-image: <i class="fas fa-unlock-alt"></i>
+}
+
+h6
+{
+  font-size: 0.7em;
+  font-style: italic;
 }

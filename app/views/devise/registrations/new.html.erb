@@ -5,9 +5,9 @@
     <p>L'inscription devient plus simple</p>
     <hr width="15%">
     <ul>
-      <li>Un seul formulaire pour toutes les écoles</li>
-      <li>Gérez facilement vos candidatures</li>
-      <li>Stocker vos données scolaires</li>
+      <li><i class="fas fa-file"></i> &nbsp;&nbsp; Un seul formulaire pour toutes les ecoles</li>
+      <li><i class="fas fa-graduation-cap"></i>&nbsp;&nbsp;Gérez facilement vos candidatures</li>
+      <li><i class="fas fa-cloud"></i>&nbsp;&nbsp;Stocker vos données scolaires</li>
     </ul>
   </div>
 
@@ -17,22 +17,26 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
 
-        <div class="field">
+        <div class="field" >
+          <i class="far fa-user"></i>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Adresse email" %>
         </div>
 
         <div class="field">
+          <i class="far fa-unlock-alt"></i>
           <%= f.password_field :password, autocomplete: "off",placeholder:"Mot de passe (min #{@minimum_password_length} chars)" %>
         </div>
 
         <div class="field">
-          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirmation" %>
+        <i class="far fa-lock"></i>
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirmation" %>
         </div>
 
         <div class="actions">
           <%= f.submit "Connexion" %>
         </div>
       <% end %>
+      <!-- <%= link_to("Mot de passe oublié?", '#') %> -->
     </div>
     <div class="loginbtn">
       <%= render "devise/shared/links" %>
