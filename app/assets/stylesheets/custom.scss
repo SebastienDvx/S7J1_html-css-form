@@ -1,45 +1,50 @@
+// Général
+
 body
 {
   display: flex;
   justify-content: center;
   // align-items: center;
-  // background: url("hills.jpg") fixed;
   background: asset-data-url('hills.jpg') fixed;
 }
 
 .container
 {
   display: flex;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
   width: 40rem;
   margin-top: 10rem;
   height: 25rem;
   border-radius: 5px;
   border: 1px black solid;
   text-align: auto;
-
 }
+
 
 .container > div
 {
-  // padding: 20px;
 }
+
+
+// Formulaire
 
 .formulaire
 {
   padding: 20px;
   margin-top: 25px;
+  // background-color: white;
 }
 
-.container > div:first-child
+.loginbtn
 {
-	background-color: rgb(48, 149, 207);
-  width: 55%;
+  background-color: rgba(170, 170, 170,0.7);
+  height: 53px;
+  width: 270px;
+  margin-top: 85px;
+  text-align: center;
+  padding-top: 30px;
   color: white;
-  border-radius: 5px 0px 0px 5px;
-  padding-left: 20px;
-  // text-align: center;
-
+  text-decoration: none;
 }
 
 .container form input[type=submit]
@@ -53,32 +58,26 @@ body
   border-radius: 5px;
 }
 
-.loginbtn
+h6
 {
-  background-color: rgb(170, 170, 170);
-  height: 53px;
-  width: 270px;
-  margin-top: 85px;
-  text-align: center;
-  padding-top: 30px;
-  color: white;
-  text-decoration: none;
+  font-size: 0.7em;
+  font-style: italic;
 }
 
 
-.field
+// Informations (à gauche)
+
+.container > div:first-child
 {
-  // width: 300px;
+	background-color: rgba(48, 149, 207, 0.7);
+  width: 55%;
+  color: white;
+  border-radius: 5px 0px 0px 5px;
+  padding-left: 20px;
 }
 
 ul
 {
   list-style-type:none;
   // background-image: <i class="fas fa-unlock-alt"></i>
-}
-
-h6
-{
-  font-size: 0.7em;
-  font-style: italic;
 }
